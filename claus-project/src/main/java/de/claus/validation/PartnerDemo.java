@@ -10,7 +10,7 @@ public class PartnerDemo {
 	public static void main(String[] args) {
 		Partner p = new Partner();
 		p.setAge(77);
-		p.setEmail("claus@test.de");
+		p.setEmail("claus@test..de");
 
 		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
@@ -29,5 +29,12 @@ public class PartnerDemo {
 		 * 
 		 */
 	
+		/**
+		 *  Oder eigene Validator defindert werden
+		 * 	constraintViolations = v.validate( p, DialogPlayer.NameValidation.class );
+			for ( ConstraintViolation<DialogPlayer> violation : constraintViolations )
+  				System.out.println( violation.getPropertyPath() + " " + violation.getMessage() );
+		 * 
+		 */
 	}
 }

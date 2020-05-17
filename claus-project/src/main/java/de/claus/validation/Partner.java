@@ -6,11 +6,21 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 public class Partner {
-	@NotNull (message="muss ungleich null sein")
+	
+	/**
+	 * Eigene Validator
+	 * @author claus
+	 *
+	 */
+	public interface NameValidation { }
+	public interface AgeValidation extends NameValidation { }
+	
+	
+	@NotNull (message="muss ungleich null sein", groups = NameValidation.class )
 	private String name;
 	private String vorname;
-	@Min(10)
-	@Max(110)
+	@Min(value = 10,  groups = AgeValidation.class)
+	@Max(value = 110, groups = AgeValidation.class)
 	private int age;
 	@Email @NotNull
 	private String email;
