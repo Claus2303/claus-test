@@ -24,6 +24,16 @@ public class Partner {
 	private int age;
 	@Email @NotNull
 	private String email;
+	@PhoneConstraint
+	private String phone;
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public String getEmail() {
 		return email;

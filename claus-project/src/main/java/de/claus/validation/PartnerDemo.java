@@ -11,6 +11,7 @@ public class PartnerDemo {
 		Partner p = new Partner();
 		p.setAge(77);
 		p.setEmail("claus@test..de");
+		p.setPhone("091917166034");
 
 		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
