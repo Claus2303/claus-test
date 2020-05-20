@@ -5,6 +5,12 @@ import javax.validation.ConstraintValidatorContext;
 
 public class PhoneValidator implements ConstraintValidator<PhoneConstraint, String>{
 
+	private String matcher;
+	
+	
+    public void initialize(PhoneConstraint contactNumber) {
+    }
+    
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 		boolean bnull = (value == null);
 		if (!bnull) {
