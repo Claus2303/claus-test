@@ -12,7 +12,7 @@ public class Partner
     private final String phone; // optional
     private final String address; // optional
  
-    private Partner(PartnerBuilder builder) {
+    private Partner(Builder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.age = builder.age;
@@ -41,27 +41,38 @@ public class Partner
         return "Partner: "+this.firstName+", "+this.lastName+", "+this.age+", "+this.phone+", "+this.address;
     }
  
-    public static class PartnerBuilder 
+    public static class Builder 
     {
-        private final String firstName;
-        private final String lastName;
+        private String firstName;
+        private String lastName;
         private int age;
         private String phone;
         private String address;
  
-        public PartnerBuilder(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public static Builder newInstance() {
+        	return new Builder();
         }
-        public PartnerBuilder age(int age) {
+        private Builder() {
+        	
+        }
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder age(int age) {
             this.age = age;
             return this;
         }
-        public PartnerBuilder phone(String phone) {
+        public Builder phone(String phone) {
             this.phone = phone;
             return this;
         }
-        public PartnerBuilder address(String address) {
+        public Builder address(String address) {
             this.address = address;
             return this;
         }
