@@ -32,6 +32,7 @@ public class StreamDemo {
 		
 		List<PartnerDTO> dtolist = list.stream()
 		.map(PartnerDTO::new)
+		.filter(partnerdto -> "Claus".equals(partnerdto.getVorname()))
 		.collect(Collectors.toList());
 		
 		System.out.println(dtolist);
