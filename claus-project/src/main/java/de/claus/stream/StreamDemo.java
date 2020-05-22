@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamDemo {
 	public static void main(String[] args) {
@@ -27,6 +28,11 @@ public class StreamDemo {
 		list.add(dto);
 		list.add(dto1);
 		list.add(dto2);
+		
+		long count = list.stream().distinct().count();
+		//Filterbeispiel
+		Stream<PartnerEntity> stream = list.stream()
+										   .filter(element -> element.getFirstname().contains("a"));
 		
 		System.out.println(list);
 		
