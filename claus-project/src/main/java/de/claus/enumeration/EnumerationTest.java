@@ -37,7 +37,7 @@ public enum EnumerationTest {
 		case 2:
 			return EnumerationTest.VERHEIRATED;
 		default:
-			return null;
+			throw new IllegalArgumentException("Übergebener Parameter nicht im Wertebereich");
 		}
 	}
 }
