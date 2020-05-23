@@ -37,7 +37,7 @@ public class StreamDemo {
 		System.out.println(list);
 		
 		List<PartnerDTO> dtolist = list.stream()
-		.map(PartnerDTO::new)
+		.map(PartnerDTO::new) //--> das geht wegen dem Konstruktor PartnerDTO(PartnerEntity p)
 		.filter(partnerdto -> "Claus".equals(partnerdto.getVorname()))
 		.collect(Collectors.toList());
 		
