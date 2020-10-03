@@ -25,9 +25,15 @@ public class StreamDemo {
 		dto2.setName("Schäffner");
 		dto2.setFirstname("Philipp");
 		
+		PartnerEntity dto3 = new PartnerEntity();
+		dto3.setGeburtsdatum(new Date(System.currentTimeMillis()));
+		dto3.setName("Schäffner");
+		dto3.setFirstname("Claus");
+		
 		list.add(dto);
 		list.add(dto1);
 		list.add(dto2);
+		list.add(dto3);
 		
 		long count = list.stream().distinct().count();
 		//Filterbeispiel
@@ -39,6 +45,7 @@ public class StreamDemo {
 		List<PartnerDTO> dtolist = list.stream()
 		.map(PartnerDTO::new) //--> das geht wegen dem Konstruktor PartnerDTO(PartnerEntity p)
 		.filter(partnerdto -> "Claus".equals(partnerdto.getVorname()))
+		.filter(partnerdto -> "Schäffner".equals(partnerdto.getName()))
 		.collect(Collectors.toList());
 		
 		System.out.println(dtolist);

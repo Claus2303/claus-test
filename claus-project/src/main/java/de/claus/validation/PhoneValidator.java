@@ -9,6 +9,7 @@ public class PhoneValidator implements ConstraintValidator<PhoneConstraint, Stri
 	
 	
     public void initialize(PhoneConstraint contactNumber) {
+    	System.out.println(contactNumber);
     }
     
 	public boolean isValid(String value, ConstraintValidatorContext context) {
